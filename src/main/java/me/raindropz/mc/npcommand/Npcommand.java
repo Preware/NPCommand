@@ -16,7 +16,6 @@ public final class Npcommand extends JavaPlugin {
 
 
         getCommand("npcommand").setExecutor(new reloadCommand(this));
-
     }
     @Override
     public void onDisable() {

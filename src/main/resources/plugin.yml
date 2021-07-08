@@ -5,3 +5,10 @@ api-version: 1.16
 depend: [ Citizens ]
 authors: [ Raindropz ]
 description: Runs commands when an NPC is hit
+commands:
+  npcommand:
+    description: Main command for the plugin
+permissions:
+  npcommand.reload:
+    description: Default reload permission
+    default: op

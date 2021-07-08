@@ -5,8 +5,14 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 
-public class reloadCommand implements CommandExecutor {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class reloadCommand implements CommandExecutor, TabCompleter {
 
     private final Npcommand plugin;
 
@@ -19,6 +25,8 @@ public class reloadCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
+        if (!sender.hasPermission("npcommand.reload")) return false;
+
         if (command.getName().equalsIgnoreCase("npcommand")) {
                 if (args[0].equalsIgnoreCase("reload")) {
                     plugin.reloadConfig();
@@ -27,8 +35,23 @@ public class reloadCommand implements CommandExecutor {
                 }
         }
 
-
-
         return false;
+    }
+
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        List<String> arguments = Collections.singletonList("reload");
+        List<String> Flist = new ArrayList<>();
+
+        if (sender.hasPermission("npcommand.reload")) {
+            if (args.length == 1) {
+                for (String s : arguments) {
+                    if (s.toLowerCase().startsWith(args[0].toLowerCase())) Flist.add(s);
+                }
+                return Flist;
+            }
+            return Collections.emptyList();
+        }
+        return Collections.emptyList();
     }
 }

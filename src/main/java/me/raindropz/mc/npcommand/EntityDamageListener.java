@@ -51,6 +51,8 @@ public class EntityDamageListener implements Listener {
                     ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
                     Bukkit.dispatchCommand(console, command);
 
+                    event.getDamager().remove();
+
                 }
             }
         }
