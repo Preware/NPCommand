@@ -1,0 +1,39 @@
+###################################################################
+#  _   _ _____   _____                                          _ #
+# | \ | |  __ \ / ____|                                        | |#
+# |  \| | |__) | |     ___  _ __ ___  _ __ ___   __ _ _ __   __| |#
+# | . ` |  ___/| |    / _ \| '_ ` _ \| '_ ` _ \ / _` | '_ \ / _` |#
+# | |\  | |    | |____ (_) | | | | | | | | | | | (_| | | | | (_| |#
+# |_| \_|_|     \_____\___/|_| |_| |_|_| |_| |_|\__,_|_| |_|\__,_|#
+###################################################################
+
+# DO NOT CHANGE VERSION! For internal use.
+version: 1.0-SNAPSHOT
+
+# Firework Settings
+flicker: false
+# Firework color: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Color.html (This feature is not implemented yet.)
+firework-color:
+  RED: 255
+  GREEN: 0
+  BLUE: 0
+
+NPCs:
+  npc1: # You can use any name here.
+    id: 1 # Use the ID of the citizen (/npc select to get it)
+    command: "say Hello World! (NPC 1)" # Command you want to execute with NO "/"!
+  npc2:
+    id: 2
+    command: "say Hello World! (NPC 2)"
+  npc3:
+    id: 3
+    command: "say Hello World! (NPC 3)"
+  npc4:
+    id: 4
+    command: "say Hello World! (NPC 4)"
+  npc5:
+    id: 5
+    command: "say Hello World! (NPC 5)"
+  npc6:
+    id: 6
+    command: "give %player_name% diamond_block 1"

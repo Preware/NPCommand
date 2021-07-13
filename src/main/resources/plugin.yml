@@ -1,0 +1,14 @@
+name: NPCommand
+version: ${project.version}
+main: me.raindropz.mc.npcommand.Npcommand
+api-version: 1.16
+depend: [ Citizens, PlaceholderAPI ]
+authors: [ Raindropz ]
+description: Runs commands when an NPC is hit
+commands:
+  npcommand:
+    description: Main command for the plugin
+permissions:
+  npcommand.reload:
+    description: Default reload permission
+    default: op
